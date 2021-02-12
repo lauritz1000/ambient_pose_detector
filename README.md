@@ -1,4 +1,4 @@
-# Prooject for Ambient Interfaces: Bad Posture Detector
+# Project for Ambient Interfaces: Bad Posture Detector
 
 - Scenario:
 	- Spending a lot of time in front of the computer and forget to take care of your posture, regularly
