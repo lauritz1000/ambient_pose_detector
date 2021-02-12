@@ -38,7 +38,7 @@
     - pystray for tray application
     - web app for configuration of the scale etc.
 
-- ideas for improvement:
+- potential problems:
     - needs a lot of horsepower:
         - only check every few seconds/minutes/etc.
         - run on a server
