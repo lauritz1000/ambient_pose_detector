@@ -36,6 +36,7 @@
 - implementation:
     - always ai for human posture detection
     - pystray for tray application
+    	- or an overlay in the corner
     - web app for configuration of the scale etc.
 
 - potential problems:
