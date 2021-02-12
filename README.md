@@ -47,3 +47,4 @@
         - camera positioned differently
     - false detections:
         - obstacles/hands/etc. will trigger bad posture detections
+    - tray icon not activated on all systems
