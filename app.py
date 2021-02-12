@@ -62,7 +62,7 @@ def main():
                 if streamer.check_exit():
                     break
 
-                time.sleep(2.0)
+                #time.sleep(2.0)
     finally:
         fps.stop()
         print("elapsed time: {:.2f}".format(fps.get_elapsed_seconds()))
