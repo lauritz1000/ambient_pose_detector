@@ -5,7 +5,7 @@
 
 - Use case:
 	Bobby is working an administration job at the university. He sits at the computer multiple hours per day and also most evenings he is gaming a few hours. He already notices that his back aches sometimes, and he heard of an easy application to keep track of his posture from a colleague. He decides to install it and try it out.
-	He will continue with his work. At first he is aware of his posture, but after some time, he loses his focus and he sinks into his seat. The app detects that his posture is not correct. The tray application icon turns yellow or red, depending on the severeness. Bobby ignores it for now. After 5/15/30 minutes he will get a notification with a sound to remind him of his bad posture. He fixes his posture and the tray icon will turn green again.
+	He will continue with his work. At first he is aware of his posture, but after some time, he loses his focus and he sinks into his seat. The app detects that his posture is not correct. The screen gradually turns red at the edges. Bobby ignores it for now. Over time the effect will get really strong. He fixes his posture and the screen will turn normal again.
 
 - motivation
 	- fix back/eye problems
