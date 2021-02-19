@@ -2,6 +2,9 @@ import logging
 import time
 import edgeiq
 from posture import CheckPosture
+import tkinter, win32api, win32con, pywintypes
+from PIL import Image, ImageTk
+from posture import CheckPosture
 """
 Use pose estimation to determine human poses in realtime. Human Pose returns
 a list of key points indicating joints that can be used for applications such
@@ -72,4 +75,26 @@ def main():
 
 
 if __name__ == "__main__":
+    root = tkinter.Tk()
+    load = Image.open("overlay3440x1440.png")
+    render = ImageTk.PhotoImage(load)
+    img = tkinter.Label(image=render, bg='white')
+    img.image = render
+    label = tkinter.Label(image=render, font=('Times New Roman', '80'), fg='black', )
+    label.master.overrideredirect(True)
+    label.master.geometry("+0+0")
+    label.master.lift()
+    label.master.wm_attributes("-topmost", True)
+    label.master.wm_attributes("-disabled", True)
+    label.master.wm_attributes("-transparentcolor", "white")
+    label.master.wm_attributes("-alpha", 0.5)
+
+    hWindow = pywintypes.HANDLE(int(label.master.frame(), 16))
+    # http://msdn.microsoft.com/en-us/library/windows/desktop/ff700543(v=vs.85).aspx
+    # The WS_EX_TRANSPARENT flag makes events (like mouse clicks) fall through the window.
+    exStyle = win32con.WS_EX_COMPOSITED | win32con.WS_EX_LAYERED | win32con.WS_EX_NOACTIVATE | win32con.WS_EX_TOPMOST | win32con.WS_EX_TRANSPARENT
+    win32api.SetWindowLong(hWindow, win32con.GWL_EXSTYLE, exStyle)
+
+    label.pack()
+    label.mainloop()
     main()
