@@ -2,3 +2,7 @@
 # Example packages listed below. Uncomment to use or add your own!
 # RPi.GPIO
 # pygame
+
+edgeiq~=0.17.1
+pywin32~=300
+Pillow~=8.1.0

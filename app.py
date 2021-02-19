@@ -1,8 +1,13 @@
+import pywintypes
 import time
+import tkinter
+import win32api
+import win32con
+
 import edgeiq
-from posture import CheckPosture
-import tkinter, win32api, win32con, pywintypes
 from PIL import Image, ImageTk
+
+from posture import CheckPosture
 
 """
 Use pose estimation to determine human poses in realtime. Human Pose returns
@@ -44,9 +49,8 @@ def main():
                 frame = video_stream.read()
                 results = pose_estimator.estimate(frame)
                 # Generate text to display on streamer
-                text = ["Model: {}".format(pose_estimator.model_id)]
-                text.append(
-                    "Inference time: {:1.3f} s".format(results.duration))
+                text = ["Model: {}".format(pose_estimator.model_id),
+                        "Inference time: {:1.3f} s".format(results.duration)]
                 for ind, pose in enumerate(results.poses):
                     text.append("Person {}".format(ind))
                     text.append('-' * 10)
@@ -58,7 +62,7 @@ def main():
                     if not correct_posture:
                         text.append(posture.build_message())
                         # make a sound to alert the user to improper posture
-                        #print("\a")
+                        # print("\a")
                         if bad_posture:
                             alpha += 0.001
                             alpha = max(0, min(alpha, 0.5))
